@@ -21,7 +21,7 @@ MAIN_MENU()
         else 
           RESULT_ATOMIC_NUM=$1 
         fi        
-        
+
       #CHECK FOR A RESULT IN DB:
       if [[ -z $RESULT_ATOMIC_NUM ]]
        then 
@@ -34,7 +34,7 @@ MAIN_MENU()
           echo -e "I could not find that element in the database."
         else
          IFS='|' read -r -a ELEMENT <<< "$RESULT_ELEMENT"
-         echo -e "The element with atomic number $1 is ${ELEMENT[1]} (${ELEMENT[0]}). It's a ${ELEMENT[5]}, with a mass of ${ELEMENT[2]} amu. Hydrogen has a melting point of ${ELEMENT[3]} celsius and a boiling point of ${ELEMENT[4]} celsius."       
+         echo "The element with atomic number $RESULT_ATOMIC_NUM is ${ELEMENT[1]} (${ELEMENT[0]}). It's a ${ELEMENT[5]}, with a mass of ${ELEMENT[2]} amu. Hydrogen has a melting point of ${ELEMENT[3]} celsius and a boiling point of ${ELEMENT[4]} celsius."
       fi 
     #OTHERWISE, REQUEST INPUT
    else
